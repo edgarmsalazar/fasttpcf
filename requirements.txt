@@ -1,0 +1,7 @@
+setuptools
+numpy
+h5py
+tqdm
+pytest
+pytest-cov
+ipykernel
