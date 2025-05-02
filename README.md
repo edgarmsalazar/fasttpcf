@@ -1,6 +1,14 @@
 # Fast TPCF
 
-This code computes the two-point correlation function of tracer fields from cosmological simulations. Works as a wrapper to [`Corrfunc`](https://github.com/manodeep/Corrfunc) providing jackknife error estimations.
+This code computes the two-point correlation function of tracer fields from cosmological simulations. Uses [`Corrfunc`](https://github.com/manodeep/Corrfunc) for pair counting and provides jackknife error estimations. 
+
+## Usage
+
+You will probably only need two functions for most cases: 
+- `cross_tpcf_jk`: computes the cross (or auto) correlation between fields given their X/Y/Z coordinates and weights (e.g. mass) for each field.
+- `cross_tpcf_jk_radial`: computes the cross (or auto) correlation between fields given the X/Y/Z coordinates for field 1 and the radial distance $r$ of field 2 with respect to field 1 coordinates. Since this function was specifically written for halo-matter computations  it assumes same mass particles.
+
+The `gridsize` parameter sets the side length of a volume partition in the same units as `boxsize`. The number of jackknife samples computed is `boxsize`//`gridsize` cubed.
 
 ## Requirements
 An `environment.yml` file is supplied as an example but feel free to use your own. 

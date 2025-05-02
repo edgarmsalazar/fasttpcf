@@ -1,5 +1,5 @@
 import math
-from typing import Tuple
+from typing import Tuple, Union
 
 import numpy as np
 from Corrfunc.theory import DD as countDD
@@ -17,8 +17,8 @@ def process_DD_pairs(
     radial_edges: np.ndarray,
     boxsize: float,
     gridsize: float,
-    weights_1=None,
-    weights_2=None,
+    weights_1: Union[np.ndarray, float] = None,
+    weights_2: Union[np.ndarray, float] = None,
     nthreads: int = 4,
 ) -> np.ndarray:
     """Counts data-data pais by using pre-partitiones box into a 3D grid.
@@ -211,8 +211,8 @@ def cross_tpcf_jk(
     radial_edges: np.ndarray,
     boxsize: float,
     gridsize: float,
-    weights_1=None,
-    weights_2=None,
+    weights_1: Union[np.ndarray, float] = None,
+    weights_2: Union[np.ndarray, float] = None,
     nthreads: int = 4,
     jk_estimates: bool = True,
 ) -> Tuple[np.ndarray]:
