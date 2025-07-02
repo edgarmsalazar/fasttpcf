@@ -10,6 +10,8 @@ You will probably only need two functions for most cases:
 
 The `gridsize` parameter sets the side length of a volume partition in the same units as `boxsize`. The number of jackknife samples computed is `boxsize`//`gridsize` cubed.
 
+There is additional `cross_power_spectrum` function to compute the power spectrum past the Nyquist frequency (see [Colombi et al (2009)](https://ui.adsabs.harvard.edu/abs/2009MNRAS.393..511C/abstract)).
+
 ## Requirements
 An `environment.yml` file is supplied as an example but feel free to use your own. 
 ```sh
@@ -17,7 +19,7 @@ $ conda env create -f environment.yml
 ```
 Alternatively, create a conda environment including the following packages:
 ```sh
-$ conda create --name <env name> python>=3.4 numpy cython mpi4py gcc gsl
+$ conda create --name <env name> python=3.10 numpy cython mpi4py gcc gsl
 ```
 
 ### Installing `Corrfunc`
